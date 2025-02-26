@@ -103,6 +103,10 @@ section {
     font-size: 2em;
 }
 
+.services-grid {
+    margin-top: 10px;
+}
+
 .category {
     margin-bottom: 25px;
     text-align: left;
@@ -295,10 +299,16 @@ footer p {
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
 @media (min-width: 1280px) {
     #services {
+        display: block;
+        text-align: center;
+    }
+
+    .services-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
         text-align: left;
+        margin-top: 20px;
     }
 
     .why-grid {
