@@ -33,34 +33,37 @@ body {
     text-align: center;
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
     font-family: 'Kavoon', cursive;
+    margin: 0;
 }
 
 h1 {
     font-size: 3em;
-    margin: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 .subheading {
     background-color: var(--pink);
     color: var(--white);
-    padding: 10px;
+    padding: 10px 15px;
     font-size: 1.2em;
     font-weight: bold;
-    text-align: center;
 }
 
 header {
-    padding: 5px 0;
+    background: var(--blue);
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 nav {
-    background: var(--yellow);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 5px 20px;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 15px;
 }
 
 .menu-button {
@@ -96,33 +99,30 @@ section {
 }
 
 #services h2 {
-    color: var(--white);
     margin-bottom: 20px;
     font-size: 2em;
 }
 
 .category {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    text-align: left;
 }
 
 .category h3 {
+    font-size: 1.4em;
     margin-bottom: 10px;
-    color: var(--white);
-    font-size: 1.3em;
-    font-weight: bold;
-    text-align: left;
+    color: var(--gold);
 }
 
 article {
     background: var(--white);
     color: var(--dark-gray);
-    margin: 5px auto;
+    margin: 10px 0;
     padding: 20px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     gap: 15px;
-    text-align: left;
 }
 
 article img {
@@ -130,8 +130,14 @@ article img {
     margin-right: 10px;
 }
 
+article h4 {
+    color: var(--dark-gray);
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
 #why-choose-us {
-    background-color: var(--pink);
+    background: var(--pink);
     padding: 30px 20px;
 }
 
@@ -248,15 +254,18 @@ footer p {
     .menu-button {
         display: none;
     }
+
     .why-grid {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .why-box {
         width: auto;
         min-width: 180px;
     }
+
     .category {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -269,14 +278,13 @@ footer p {
     nav ul {
         gap: 20px;
     }
-    .category {
-        grid-template-columns: repeat(3, 1fr);
-    }
+
     .pricing-grid {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .pricing-grid table {
         flex: 1 1 250px;
         max-width: 300px;
@@ -286,12 +294,17 @@ footer p {
 
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
 @media (min-width: 1280px) {
-    .category {
+    #services {
+        display: grid;
         grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        text-align: left;
     }
+
     .why-grid {
         gap: 30px;
     }
+
     .why-box {
         min-width: 200px;
         font-size: 1.15em;
