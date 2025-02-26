@@ -9,7 +9,6 @@
 }
 
 /* -------------------- ROOT VARIABLES --------------------------------------- */
-/* Using the 7 specified colors */
 :root {
     --teal: #4CA7C0;
     --purple: #484FB7;
@@ -23,7 +22,7 @@
 /* -------------------- GLOBAL STYLES (mobile first) -------------------- */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--purple); /* main page background */
+    background-color: var(--purple);
     color: var(--white);
     text-align: center; /* center headings by default */
 }
@@ -63,7 +62,6 @@ nav {
     gap: 15px;
 }
 
-/* "Menu" button for small screens */
 .menu-button {
     background: none;
     border: 2px solid var(--dark-gray);
@@ -84,7 +82,6 @@ nav li {
     margin: 0 10px;
 }
 
-/* Nav links: yellow text on purple background */
 nav a {
     color: var(--yellow);
     text-decoration: none;
@@ -113,19 +110,21 @@ section {
     margin-top: 10px;
 }
 
-/* Each category (One-on-One, Group, etc.) */
+/* Category containers */
 .category {
     margin-bottom: 25px;
-    text-align: left; /* override center for content */
+    text-align: left; /* override center for the card content */
 }
 
 .category h3 {
     font-size: 1.4em;
     margin-bottom: 10px;
-    color: var(--white);
+    /* Use the yellow color to match the mockup heading style */
+    color: var(--yellow);
+    text-align: center; /* center the category heading in its column */
 }
 
-/* Article cards: white background, dark-gray text, at all breakpoints */
+/* Article cards: white background, dark-gray text at all breakpoints */
 article {
     background: var(--white);
     color: var(--dark-gray);
@@ -133,12 +132,14 @@ article {
     padding: 20px;
     border-radius: 12px;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* icon + text alignment at top */
     gap: 15px;
 }
 
 article img {
     flex-shrink: 0;
+    width: 40px;
+    height: auto;
 }
 
 article h4 {
@@ -197,7 +198,6 @@ article h4 {
     align-items: center;
 }
 
-/* Tables: white background, dark-gray text, yellow header */
 table {
     width: 100%;
     max-width: 600px;
@@ -247,7 +247,6 @@ td, th {
     margin-top: 20px;
 }
 
-/* White button with dark-gray text */
 .schedule-button {
     background: var(--white);
     color: var(--dark-gray);
@@ -334,7 +333,7 @@ footer a {
 
 /* XL breakpoint (>=1280px) */
 @media (min-width: 1280px) {
-    /* Increase spacing for a cleaner look and center the main heading */
+    /* Center the main heading "Our Services" and increase spacing */
     #services {
         text-align: center;
         max-width: 1200px;
@@ -346,12 +345,12 @@ footer a {
     .services-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 40px;          /* space between columns */
-        text-align: left;   /* left-align articles */
+        gap: 40px;
         margin-top: 30px;
+        text-align: left; /* ensure card text is left-aligned */
     }
 
-    /* Turn each .category into a vertical column */
+    /* Each .category forms its own column */
     .category {
         display: flex;
         flex-direction: column;
@@ -359,13 +358,10 @@ footer a {
         margin-bottom: 0;
     }
 
-    /* Make category headings stand out more on XL screens */
+    /* Keep category headings in yellow and center them within each column */
     .category h3 {
-        color: var(--white);
         font-size: 1.6em;
         margin-bottom: 20px;
+        text-align: center;
     }
-
-    /* Keep the white card backgrounds (no override to remove them) */
-    /* So articles remain white with dark text at all breakpoints */
 }
