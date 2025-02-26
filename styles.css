@@ -1,7 +1,7 @@
 /* -------------------- CSS BY NAME -------------------------------------- */
 
 /* -------------------- IMPORTED FONTS -------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kavoon&display=swap');
 
 /*-------------------- CSS RESET ---------------------------------------------------*/
 * {
@@ -12,42 +12,62 @@
 
 /* -------------------- ROOT VARIABLES --------------------------------------- */
 :root {
-    --primary-color: #3f3fbf;
-    --secondary-color: #e64c4c;
-    --accent-color: #ffcc00;
-    --text-color: #ffffff;
-    --card-bg: #ffffff;
-    --button-bg: #ffcc00;
-    --button-text: #000000;
+    --teal: #4CA7C0;
+    --purple: #484FB7;
+    --lavender: #6B8FE7;
+    --yellow: #E9BB57;
+    --pink: #D9526F;
+    --dark-gray: #1E1E1E;
+    --white: #ffffff;
 }
 
 /* -------------------- GLOBAL STYLES (mobile first/small) --------------------*/
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-gray);
+    color: var(--white);
     text-align: center;
 }
 
-header {
-    background-color: var(--primary-color);
-    padding: 20px;
+h1, h2 {
+    font-family: 'Kavoon', cursive;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 3em;
+}
+
+nav h2 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.15em;
+}
+
+header {
+    background-color: var(--purple);
+    padding: 20px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    background: var(--accent-color);
+    background: var(--yellow);
     padding: 10px 0;
 }
 
 nav a {
-    color: var(--button-text);
+    color: var(--dark-gray);
     text-decoration: none;
     font-weight: bold;
 }
@@ -57,8 +77,8 @@ section {
 }
 
 article {
-    background: var(--card-bg);
-    color: black;
+    background: var(--white);
+    color: var(--dark-gray);
     margin: 10px auto;
     padding: 20px;
     border-radius: 8px;
