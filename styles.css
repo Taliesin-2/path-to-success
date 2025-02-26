@@ -53,8 +53,10 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background: var(--yellow);
     padding: 10px 20px;
+    height: 50px;
 }
 
 nav a {
@@ -74,6 +76,13 @@ section {
 }
 
 /* Service Cards */
+#services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
 article {
     background: var(--white);
     color: var(--dark-gray);
@@ -83,7 +92,7 @@ article {
     max-width: 90%;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 article img {
@@ -98,9 +107,9 @@ article img {
 
 #why-choose-us ul {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 #why-choose-us li {
@@ -113,9 +122,9 @@ article img {
 
 /* Pricing Table */
 table {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     border-collapse: collapse;
-    margin: 20px 0;
 }
 
 thead {
@@ -125,12 +134,17 @@ thead {
 }
 
 td, th {
-    border: 1px solid var(--black);
+    border: none;
     padding: 10px;
     text-align: center;
 }
 
 /* Call-to-Action Button */
+.schedule-button-container {
+    display: flex;
+    justify-content: center;
+}
+
 .schedule-button {
     background: white;
     color: black;
@@ -156,9 +170,7 @@ td, th {
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
 @media (min-width: 950px) {
     #services {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
     }
     article {
         max-width: 100%;
