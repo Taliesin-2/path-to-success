@@ -1,0 +1,103 @@
+/* -------------------- CSS BY NAME -------------------------------------- */
+
+/* -------------------- IMPORTED FONTS -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/*-------------------- CSS RESET ---------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------- ROOT VARIABLES --------------------------------------- */
+:root {
+    --primary-color: #3f3fbf;
+    --secondary-color: #e64c4c;
+    --accent-color: #ffcc00;
+    --text-color: #ffffff;
+    --card-bg: #ffffff;
+    --button-bg: #ffcc00;
+    --button-text: #000000;
+}
+
+/* -------------------- GLOBAL STYLES (mobile first/small) --------------------*/
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    background: var(--accent-color);
+    padding: 10px 0;
+}
+
+nav a {
+    color: var(--button-text);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px;
+}
+
+article {
+    background: var(--card-bg);
+    color: black;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+/*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media (min-width: 620px) {
+    article {
+        max-width: 80%;
+    }
+    nav ul {
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+/*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media (min-width: 950px) {
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    article {
+        flex: 1 1 calc(50% - 20px);
+        max-width: 45%;
+    }
+}
+
+/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media (min-width: 1280px) {
+    article {
+        flex: 1 1 calc(25% - 20px);
+        max-width: 22%;
+    }
+    nav ul {
+        justify-content: space-between;
+        padding: 20px;
+    }
+}
