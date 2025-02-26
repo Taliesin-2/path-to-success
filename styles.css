@@ -7,31 +7,33 @@
 
 /* -------------------- ROOT VARIABLES --------------------------------------- */
 :root {
-    --teal: #4CA7C0;
-    --purple: #484FB7;
-    --lavender: #6B8FE7;
-    --yellow: #E9BB57;
-    --pink: #D9526F;
-    --dark-gray: #1E1E1E;
-    --white: #ffffff;
+    --color-teal: #4CA7C0;
+    --color-purple: #484FB7;
+    --color-lavender: #6B8FE7;
+    --color-yellow: #E9BB57;
+    --color-pink: #D9526F;
+    --color-dark-gray: #1E1E1E;
+    --color-white: #ffffff;
+    
+    --font-heading: 'Kavoon', cursive;
+    --font-body: 'Inter', sans-serif;
 }
 
-/* -------------------- GLOBAL STYLES (mobile first/small) -------------------- */
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--purple);
+    font-family: var(--font-body);
+    background-color: var(--color-purple);
+    color: var(--color-white);
     margin: 0;
     padding: 0;
-    color: var(--white);
 }
 
 h1, h2 {
-    font-family: 'Kavoon', cursive;
+    font-family: var(--font-heading);
 }
 
 h1 {
     font-size: 3em;
-    color: var(--white);
 }
 
 h2 {
@@ -46,99 +48,83 @@ h4 {
     font-size: 1.15em;
 }
 
-nav h2 {
-    font-size: 1.5em;
-}
-
-header {
+nav {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    padding-top: 50px;
+    padding: 10px;
 }
 
-.navbar {
-    background-color: var(--yellow);
-    display: flex;
-    justify-content: space-around;
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+button {
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
     padding: 10px 20px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+section {
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
     border-radius: 10px;
-    width: auto;
+    padding: 20px;
+    margin: 10px 0;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: var(--dark-gray);
-    font-weight: bold;
+.pricing-table {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-gray);
+    padding: 10px;
+    border-radius: 8px;
 }
 
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.header-content {
-    background-color: var(--lavender);
-    padding: 40px;
-    border-radius: 30px;
-    text-align: center;
-    width: 50%;
-    position: relative;
-    z-index: 1;
-}
-
-.sub-header {
-    background-color: var(--pink);
-    padding: 15px;
-    border-radius: 30px;
-    text-align: center;
-    font-style: italic;
-    width: 40%;
-    position: relative;
-    margin-top: -20px;
-    z-index: 0;
-}
-
-@media (min-width: 450px) {
-    .header-content {
-        width: 60%;
-    }
-    .sub-header {
-        width: 50%;
-    }
-}
-
+/*-------------------- MEDIA QUERY (medium) --------------------------------*/
 @media (min-width: 620px) {
-    .header-content {
-        width: 55%;
-    }
-    .sub-header {
-        width: 45%;
+    .services-container, .pricing-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 }
 
+/*-------------------- MEDIA QUERY (large) ------------------------------------*/
 @media (min-width: 950px) {
-    .header-content {
-        width: 50%;
+    nav ul {
+        display: flex;
     }
-    .sub-header {
-        width: 40%;
+
+    .services-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pricing-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
 @media (min-width: 1280px) {
-    .header-content {
-        width: 45%;
+    .services-container {
+        grid-template-columns: repeat(4, 1fr);
     }
-    .sub-header {
-        width: 35%;
+
+    .pricing-container {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
