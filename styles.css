@@ -9,7 +9,7 @@
 }
 
 /* -------------------- ROOT VARIABLES --------------------------------------- */
-/* Only using the 7 colors specified */
+/* Using the 7 specified colors */
 :root {
     --teal: #4CA7C0;
     --purple: #484FB7;
@@ -125,9 +125,7 @@ section {
     color: var(--white);
 }
 
-/* Articles: 
-   - By default, we keep them stacked for smaller screens.
-   - We'll remove the white background at the XL breakpoint. */
+/* Article cards: white background, dark-gray text, at all breakpoints */
 article {
     background: var(--white);
     color: var(--dark-gray);
@@ -259,7 +257,6 @@ td, th {
     font-weight: bold;
     border: none;
     cursor: pointer;
-    /* Use dark-gray with alpha for drop shadow */
     box-shadow: 0 4px 6px rgba(30, 30, 30, 0.2);
 }
 
@@ -337,13 +334,12 @@ footer a {
 
 /* XL breakpoint (>=1280px) */
 @media (min-width: 1280px) {
-    /* Center the "Our Services" heading, but let content align left below */
+    /* Increase spacing for a cleaner look and center the main heading */
     #services {
-        display: block;
         text-align: center;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 60px 20px; /* increased spacing for a cleaner look */
+        padding: 60px 20px;
     }
 
     /* 4-column layout for .services-grid */
@@ -360,42 +356,16 @@ footer a {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-bottom: 0; /* override the earlier margin-bottom */
+        margin-bottom: 0;
     }
 
-    /* Category headings in each column */
+    /* Make category headings stand out more on XL screens */
     .category h3 {
         color: var(--white);
         font-size: 1.6em;
         margin-bottom: 20px;
     }
 
-    /* Remove the white card background at XL screens */
-    article {
-        background: none;
-        color: var(--white);
-        margin: 0 0 20px 0;  /* spacing between articles */
-        padding: 0;
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    article img {
-        width: 40px;
-        height: auto;
-        flex-shrink: 0;
-    }
-
-    article h4 {
-        color: var(--white);
-        font-size: 1.1em;
-        margin-top: 0;
-        margin-bottom: 5px;
-    }
-
-    article p {
-        color: var(--white);
-        line-height: 1.4;
-    }
+    /* Keep the white card backgrounds (no override to remove them) */
+    /* So articles remain white with dark text at all breakpoints */
 }
