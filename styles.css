@@ -57,6 +57,7 @@ header {
     justify-content: center;
     position: relative;
     text-align: center;
+    padding-top: 50px;
 }
 
 .navbar {
@@ -68,6 +69,7 @@ header {
     top: 20px;
     right: 20px;
     border-radius: 10px;
+    width: auto;
 }
 
 .navbar a {
@@ -76,12 +78,19 @@ header {
     font-weight: bold;
 }
 
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .header-content {
     background-color: var(--lavender);
     padding: 40px;
     border-radius: 30px;
     text-align: center;
-    width: 80%;
+    width: 50%;
     position: relative;
     z-index: 1;
 }
@@ -92,38 +101,44 @@ header {
     border-radius: 30px;
     text-align: center;
     font-style: italic;
-    width: 60%;
+    width: 40%;
     position: relative;
     margin-top: -20px;
     z-index: 0;
 }
 
-/*-------------------- MEDIA QUERY (medium) --------------------------------*/
-@media (min-width: 620px) {
+@media (min-width: 450px) {
     .header-content {
-        width: 70%;
+        width: 60%;
     }
     .sub-header {
         width: 50%;
     }
 }
 
-/*-------------------- MEDIA QUERY (large) ------------------------------------*/
-@media (min-width: 950px) {
+@media (min-width: 620px) {
     .header-content {
-        width: 60%;
+        width: 55%;
     }
     .sub-header {
         width: 45%;
     }
 }
 
-/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
-@media (min-width: 1280px) {
+@media (min-width: 950px) {
     .header-content {
         width: 50%;
     }
     .sub-header {
         width: 40%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header-content {
+        width: 45%;
+    }
+    .sub-header {
+        width: 35%;
     }
 }
