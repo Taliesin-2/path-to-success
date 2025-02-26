@@ -108,6 +108,7 @@ section {
     margin-bottom: 20px;
     font-size: 2em;
     color: var(--white);
+    text-align: left;
 }
 
 .services-grid {
