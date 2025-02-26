@@ -39,6 +39,10 @@ h1 {
     color: var(--white);
 }
 
+h4 {
+    color: var(--purple)
+}
+
 .subheading {
     background-color: var(--pink);
     color: var(--white);
