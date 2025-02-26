@@ -1,5 +1,5 @@
 /* -------------------- IMPORTED FONTS -------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kavoon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kavoon&display=swap');
 
 /*-------------------- CSS RESET ---------------------------------------------------*/
 * {
@@ -9,7 +9,6 @@
 }
 
 /* -------------------- ROOT VARIABLES --------------------------------------- */
-/* Only using the 7 colors you specified */
 :root {
     --teal: #4CA7C0;
     --purple: #484FB7;
@@ -23,7 +22,7 @@
 /* -------------------- GLOBAL STYLES (mobile first) -------------------- */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--purple); /* main page background */
+    background-color: var(--purple);
     color: var(--white);
     text-align: center; /* center headings by default */
 }
@@ -84,23 +83,23 @@ nav li {
     margin: 0 10px;
 }
 
-/* Nav links: yellow text on purple background */
 nav a {
     color: var(--yellow);
     text-decoration: none;
     font-weight: bold;
 }
 
-/* SECTIONS */
+/* SECTIONS (common) */
 section {
     padding: 20px;
     margin: auto;
-    max-width: 1200px; /* limit width for readability */
+    max-width: 1200px;
 }
 
-/* SERVICES SECTION */
+/* -------------------- SERVICES SECTION -------------------- */
 #services {
     background: var(--purple);
+    padding-bottom: 40px; /* add a bit more space at the bottom */
 }
 
 #services h2 {
@@ -109,47 +108,65 @@ section {
     color: var(--white);
 }
 
+/* Base grid for service categories (mobile-first) */
 .services-grid {
-    margin-top: 10px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* single column on smaller screens */
+    gap: 30px;
 }
 
-/* Each category (One-on-One, Group, etc.) */
+/* Category container: entire white card */
 .category {
-    margin-bottom: 25px;
-    text-align: left; /* override center for content */
-}
-
-/* Category heading: white or dark-gray? 
-   Mockup typically shows black text, but we only have dark-gray. */
-.category h3 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-    color: var(--white);
-}
-
-/* Service article boxes: white background, dark-gray text */
-article {
     background: var(--white);
     color: var(--dark-gray);
-    margin: 10px 0;
-    padding: 20px;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    padding: 20px;
+    text-align: left; /* override the global center for inside text */
 }
 
-article img {
-    flex-shrink: 0;
-}
-
-article h4 {
+/* Category heading in dark text */
+.category h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
     color: var(--dark-gray);
-    font-size: 1.1em;
-    margin-bottom: 5px;
 }
 
-/* WHY CHOOSE US */
+/* Container for sub-articles (icons + text) */
+.category-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+/* Individual sub-articles: icon above heading, center-aligned */
+.category-content article {
+    background: none; /* remove white box from each article */
+    color: var(--dark-gray);
+    text-align: center;
+    flex: 0 1 auto;
+    max-width: 200px;
+    margin: 0 auto; /* centers each article within the row */
+}
+
+.category-content article img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.category-content article h4 {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.category-content article p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* -------------------- WHY CHOOSE US -------------------- */
 #why-choose-us {
     background: var(--pink);
     padding: 30px 20px;
@@ -180,7 +197,7 @@ article h4 {
     font-size: 1.1em;
 }
 
-/* PRICING */
+/* -------------------- PRICING -------------------- */
 #pricing {
     background: var(--pink);
     padding: 30px 20px;
@@ -192,6 +209,7 @@ article h4 {
     color: var(--white);
 }
 
+/* A grid that will rearrange at larger breakpoints */
 .pricing-grid {
     display: flex;
     flex-direction: column;
@@ -199,15 +217,28 @@ article h4 {
     align-items: center;
 }
 
-/* Tables: white background, dark-gray text, yellow header */
-table {
-    width: 100%;
-    max-width: 600px;
-    border-collapse: collapse;
-    margin: 0 auto;
+/* Each pricing column: white card with heading + table */
+.pricing-column {
     background: var(--white);
     color: var(--dark-gray);
+    padding: 20px;
     border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.pricing-column h3 {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: var(--dark-gray);
+    text-align: center;
+}
+
+.pricing-column table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border-radius: 4px;
     overflow: hidden;
 }
 
@@ -223,7 +254,7 @@ td, th {
     text-align: center;
 }
 
-/* CONTACT */
+/* -------------------- CONTACT -------------------- */
 #contact {
     background: var(--pink);
     color: var(--white);
@@ -259,11 +290,10 @@ td, th {
     font-weight: bold;
     border: none;
     cursor: pointer;
-    /* Use dark-gray with alpha for drop shadow */
     box-shadow: 0 4px 6px rgba(30, 30, 30, 0.2);
 }
 
-/* FOOTER */
+/* -------------------- FOOTER -------------------- */
 footer {
     background: var(--purple);
     text-align: center;
@@ -283,18 +313,17 @@ footer a {
 
 /*-------------------- MEDIA QUERIES --------------------*/
 
-/* Medium breakpoint */
+/* Medium breakpoint (≥450px) */
 @media (min-width: 450px) {
-    /* Show nav links, hide menu button */
     nav ul {
-        display: flex;
+        display: flex; /* show nav links */
     }
 }
 
+/* Larger breakpoint (≥620px) */
 @media (min-width: 620px) {
-    /* Hide the menu button at larger widths */
     .menu-button {
-        display: none;
+        display: none; /* hide menu button on larger screens */
     }
 
     .why-grid {
@@ -308,50 +337,41 @@ footer a {
         min-width: 180px;
     }
 
-    /* Each category becomes 2 columns at medium sizes */
-    .category {
-        display: grid;
+    /* Two columns for categories at medium sizes, if desired */
+    .services-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
     }
 }
 
-/* Large breakpoint */
+/* Even larger breakpoint (≥950px) */
 @media (min-width: 950px) {
-    nav ul {
-        gap: 20px;
-    }
-
+    /* For example, if you want to keep pricing in a row earlier */
     .pricing-grid {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-
-    .pricing-grid table {
-        flex: 1 1 250px;
-        max-width: 300px;
-        margin: 0 10px;
-    }
 }
 
-/* XL breakpoint (>=1280px) */
+/* XL breakpoint (≥1280px) */
 @media (min-width: 1280px) {
-    #services {
-        display: block;
-        text-align: center;
-    }
-    /* 2x2 layout for the service categories */
+    /* Services in a 2x2 grid */
     .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .category-content {
+        justify-content: space-between; /* spread out sub-articles */
+    }
+
+    /* Pricing: 2x2 grid for columns */
+    .pricing-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
         gap: 30px;
-        text-align: left;
-        margin-top: 20px;
+        align-items: flex-start;
     }
-    .category {
-        display: block; /* stack articles vertically */
-    }
+    
     .why-grid {
         gap: 30px;
     }
