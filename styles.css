@@ -67,6 +67,8 @@ nav a {
 
 section {
     padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* Service Categories */
@@ -93,10 +95,12 @@ article {
     display: flex;
     align-items: center;
     gap: 15px;
+    text-align: left;
 }
 
 article img {
     flex-shrink: 0;
+    margin-right: 10px;
 }
 
 /* Why Choose Us */
@@ -122,7 +126,8 @@ article img {
 
 /* Pricing Table */
 table {
-    width: 80%;
+    width: 100%;
+    max-width: 80%;
     margin: auto;
     border-collapse: collapse;
 }
@@ -135,7 +140,7 @@ thead {
 
 td, th {
     border: none;
-    padding: 10px;
+    padding: 10px 5px;
     text-align: center;
 }
 
