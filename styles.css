@@ -9,8 +9,8 @@
 }
 
 /* -------------------- ROOT VARIABLES --------------------------------------- */
+/* Only using the 7 colors you specified */
 :root {
-    --blue: #3B3FBF;
     --teal: #4CA7C0;
     --purple: #484FB7;
     --lavender: #6B8FE7;
@@ -18,16 +18,14 @@
     --pink: #D9526F;
     --dark-gray: #1E1E1E;
     --white: #ffffff;
-    --gold: #E4B363;
-    --black: #000000;
 }
 
 /* -------------------- GLOBAL STYLES (mobile first) -------------------- */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--blue);
+    background-color: var(--purple); /* main page background */
     color: var(--white);
-    text-align: center; /* Center headings and text by default */
+    text-align: center; /* center headings by default */
 }
 
 h1, h2, h3, h4 {
@@ -39,6 +37,7 @@ h1 {
     font-size: 3em;
     margin-top: 20px;
     margin-bottom: 5px;
+    color: var(--white);
 }
 
 .subheading {
@@ -50,12 +49,12 @@ h1 {
 }
 
 header {
-    background: var(--blue);
+    background: var(--purple);
     text-align: center;
     padding-bottom: 10px;
 }
 
-/* Navigation */
+/* NAVIGATION */
 nav {
     display: flex;
     align-items: center;
@@ -64,10 +63,11 @@ nav {
     gap: 15px;
 }
 
+/* "Menu" button for small screens */
 .menu-button {
     background: none;
-    border: 2px solid var(--black);
-    color: var(--black);
+    border: 2px solid var(--dark-gray);
+    color: var(--dark-gray);
     padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
@@ -77,49 +77,57 @@ nav {
 
 nav ul {
     list-style: none;
-    display: none; /* hidden by default on small screens */
+    display: none; /* hidden on small screens */
 }
 
 nav li {
     margin: 0 10px;
 }
 
+/* Nav links: yellow text on purple background */
 nav a {
-    color: var(--black);
+    color: var(--yellow);
     text-decoration: none;
     font-weight: bold;
 }
 
-/* Sections */
+/* SECTIONS */
 section {
     padding: 20px;
     margin: auto;
-    max-width: 1200px; /* limit overall width for readability */
+    max-width: 1200px; /* limit width for readability */
+}
+
+/* SERVICES SECTION */
+#services {
+    background: var(--purple);
 }
 
 #services h2 {
     margin-bottom: 20px;
     font-size: 2em;
+    color: var(--white);
 }
 
-/* Services grid container */
 .services-grid {
     margin-top: 10px;
 }
 
-/* Each category column */
+/* Each category (One-on-One, Group, etc.) */
 .category {
     margin-bottom: 25px;
-    text-align: left; /* override center for category content */
+    text-align: left; /* override center for content */
 }
 
+/* Category heading: white or dark-gray? 
+   Mockup typically shows black text, but we only have dark-gray. */
 .category h3 {
     font-size: 1.4em;
     margin-bottom: 10px;
-    color: var(--gold);
+    color: var(--white);
 }
 
-/* Individual service article */
+/* Service article boxes: white background, dark-gray text */
 article {
     background: var(--white);
     color: var(--dark-gray);
@@ -133,7 +141,6 @@ article {
 
 article img {
     flex-shrink: 0;
-    margin-right: 10px;
 }
 
 article h4 {
@@ -142,7 +149,7 @@ article h4 {
     margin-bottom: 5px;
 }
 
-/* Why Choose Us */
+/* WHY CHOOSE US */
 #why-choose-us {
     background: var(--pink);
     padding: 30px 20px;
@@ -151,6 +158,7 @@ article h4 {
 #why-choose-us h2 {
     margin-bottom: 30px;
     font-size: 2.2em;
+    color: var(--white);
 }
 
 .why-grid {
@@ -162,7 +170,7 @@ article h4 {
 
 .why-box {
     background: var(--white);
-    color: var(--black);
+    color: var(--dark-gray);
     padding: 20px 25px;
     border-radius: 8px;
     font-weight: bold;
@@ -172,10 +180,16 @@ article h4 {
     font-size: 1.1em;
 }
 
-/* Pricing */
+/* PRICING */
+#pricing {
+    background: var(--pink);
+    padding: 30px 20px;
+}
+
 #pricing h2 {
     margin-bottom: 25px;
     font-size: 2em;
+    color: var(--white);
 }
 
 .pricing-grid {
@@ -185,16 +199,21 @@ article h4 {
     align-items: center;
 }
 
+/* Tables: white background, dark-gray text, yellow header */
 table {
     width: 100%;
     max-width: 600px;
     border-collapse: collapse;
     margin: 0 auto;
+    background: var(--white);
+    color: var(--dark-gray);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 thead {
-    background: var(--gold);
-    color: var(--black);
+    background: var(--yellow);
+    color: var(--dark-gray);
     font-weight: bold;
 }
 
@@ -204,7 +223,7 @@ td, th {
     text-align: center;
 }
 
-/* Contact */
+/* CONTACT */
 #contact {
     background: var(--pink);
     color: var(--white);
@@ -230,27 +249,36 @@ td, th {
     margin-top: 20px;
 }
 
+/* White button with dark-gray text */
 .schedule-button {
     background: var(--white);
-    color: var(--black);
+    color: var(--dark-gray);
     padding: 15px 30px;
     border-radius: 8px;
     font-size: 1.2em;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    /* Use dark-gray with alpha for drop shadow */
+    box-shadow: 0 4px 6px rgba(30, 30, 30, 0.2);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
+    background: var(--purple);
     text-align: center;
     margin-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 
 footer p {
     margin: 10px 0;
+    color: var(--white);
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: underline;
 }
 
 /*-------------------- MEDIA QUERIES --------------------*/
@@ -309,30 +337,24 @@ footer p {
 
 /* XL breakpoint (>=1280px) */
 @media (min-width: 1280px) {
-    /* Center the section heading but keep the text left inside the grid */
     #services {
         display: block;
         text-align: center;
     }
-
-    /* 4-column layout for the service categories */
+    /* 2x2 layout for the service categories */
     .services-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
         text-align: left;
         margin-top: 20px;
     }
-
-    /* Override the 2-column layout from 620px so each category stacks its articles vertically */
     .category {
-        display: block;
+        display: block; /* stack articles vertically */
     }
-
     .why-grid {
         gap: 30px;
     }
-
     .why-box {
         min-width: 200px;
         font-size: 1.15em;
